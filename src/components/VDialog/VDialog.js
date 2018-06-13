@@ -5,6 +5,8 @@ export default {
 
   name: 'v-dialog',
 
+  $_wrapperFor: VDialogContent,
+
   render (h, context) {
     const slots = context.slots()
     const activator = slots.activator && slots.activator[0]
