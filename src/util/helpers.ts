@@ -221,7 +221,8 @@ export function filterChildren (array: VNode[] = [], tag: string): VNode[] {
   })
 }
 
-export function convertToUnit (str: string | number, unit = 'px'): string {
+export function convertToUnit (str: string | number, unit = 'px'): string | undefined {
+  if (!str && str !== 0) return undefined
   return isNaN(+str)
     ? str as string // TODO: this is wrong but I cbf fixing it
     : `${Number(str)}${unit}`
